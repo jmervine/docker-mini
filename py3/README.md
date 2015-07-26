@@ -1,4 +1,4 @@
-# [jmervine/minipy:3](https://registry.hub.docker.com/u/jmervine/minipy:3)
+# [jmervine/minipy:3](https://registry.hub.docker.com/u/jmervine/minipy)
 
 ### A small [Docker] image for running [Python](https://www.python.org/) apps built using [Alpine Linux]
 
