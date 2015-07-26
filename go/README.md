@@ -9,7 +9,7 @@
 docker run --rm -it \
     -v $(pwd):/gopath/src/github.com/my_user/my_project \
     jmervine/minigo \
-    sh -C 'go get -v && go run main.go`
+    sh -C 'go get -v && go run main.go'
 ```
 
 ##### As a Dockerfile base

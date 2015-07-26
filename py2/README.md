@@ -1,10 +1,16 @@
-# docker-minipy
+# [jmervine/minipy:2](https://registry.hub.docker.com/u/jmervine/minipy:2)
 
-Python built on Alpine Linux to be small.
+### A small [Docker] image for running [Python](https://www.python.org/) apps built using [Alpine Linux]
 
-#### Notes:
+##### Usage
 
-* latest maps to Python 2(.7) becuase that's what I use.
-* see tags for all tags
-* includes `pip`
-* omits `virtualenv`
+```
+# running local code
+docker run --rm -it \
+    -v $(pwd):/src \
+    jmervine/minipy:2 \
+    sh -C 'pip install -r requirements.txt && python main.py'
+```
+
+[Alpine Linux]: https://www.alpinelinux.org/
+[Docker]: https://www.docker.com/
