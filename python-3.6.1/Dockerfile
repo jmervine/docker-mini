@@ -1,7 +1,9 @@
+# WARNING
+# -------
+# This file is dynamically generated, do not edit!
+# See https://github.com/jmervine/imagend for generator details.
 from jmervine/mini:latest
-maintainer Joshua Mervine <jmervine@mervine.net>
 
-# TODO: move downloading in to the Dockerfile-v3
 add https://bootstrap.pypa.io/get-pip.py /tmp/
 run set -x; \
   apk -U add \
@@ -11,6 +13,6 @@ run set -x; \
   ln -s /usr/bin/python3-config /usr/bin/python-config && \
   python /tmp/get-pip.py && \
   rm -vrf /var/cache/apk/* /tmp/*.py
-
 workdir /src
+
 cmd sh

@@ -1,0 +1,30 @@
+# WARNING
+# -------
+# This file is dynamically generated, do not edit!
+# See https://github.com/jmervine/imagend for generator details.
+from {{.Source}}
+
+{{ range $tag := .Tags -}}
+{{ if eq $tag "2" -}}
+run set -x; \
+  apk -U -X https://dl-3.alpinelinux.org/alpine/edge/main add \
+    python python-dev py-pip && \
+  pip install --upgrade pip || true && \
+  rm -vrf /var/cache/apk/*
+{{ end -}}
+{{ if eq $tag "3" -}}
+add https://bootstrap.pypa.io/get-pip.py /tmp/
+run set -x; \
+  apk -U add \
+    python3 \
+    python3-dev && \
+  ln -s /usr/bin/python3 /usr/bin/python && \
+  ln -s /usr/bin/python3-config /usr/bin/python-config && \
+  python /tmp/get-pip.py && \
+  rm -vrf /var/cache/apk/* /tmp/*.py
+{{ end -}}
+{{ end -}}
+
+workdir /src
+
+cmd sh

@@ -1,14 +1,14 @@
+# WARNING
+# -------
+# This file is dynamically generated, do not edit!
+# See https://github.com/jmervine/imagend for generator details.
+
 from jmervine/mini:latest
 maintainer Joshua Mervine <jmervine@mervine.net>
 
 run set -x; \
-  apk -U add \
-    curl \
-    git \
-    mercurial \
-    bzr \
-    go \
-    go-tools && \
+  apk -U add curl git mercurial bzr \
+    go go-tools && \
   rm -vrf /var/cache/apk/*
 
 env GOROOT /usr/lib/go

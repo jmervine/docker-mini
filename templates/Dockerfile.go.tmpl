@@ -1,0 +1,24 @@
+# WARNING
+# -------
+# This file is dynamically generated, do not edit!
+# See https://github.com/jmervine/imagend for generator details.
+
+from {{.Source}}
+maintainer Joshua Mervine <jmervine@mervine.net>
+
+run set -x; \
+  apk -U add curl git mercurial bzr \
+    go go-tools && \
+  rm -vrf /var/cache/apk/*
+
+env GOROOT /usr/lib/go
+env GOPATH /gopath
+env GOBIN  /gopath/bin
+env PATH   $GOROOT/bin:$GOPATH/bin:$PATH
+
+run set -x; \
+  mkdir -vp $GOROOT $GOBIN $GOPATH/src
+
+workdir $GOPATH/src
+
+cmd sh

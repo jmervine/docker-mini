@@ -1,0 +1,75 @@
+# Order matters when it comes to building images, currently though, they're
+# build in alphabetical order. Which works because "base" needs to be first
+# and then "node", after that, it doesn't matter.
+#
+# See github.com/jmervine/imagend  for generator details.
+# -------------------------------------------------------------------------
+# base images
+- name: base
+  image: jmervine/mini
+  version: alpine3.6.2
+  source: alpine:latest
+  priority: -2
+  tags:
+  - latest
+  - alpine3.6
+  - alpine3
+  verify:
+    exec: "cat /etc/alpine-release"
+    expect: 3.6.2
+
+# - name: go
+#   image: jmervine/minigo
+#   version: 1.9.2
+#   source: jmervine/mini:latest
+#   tags:
+#   - latest
+#   - 1.9
+#   - 1
+- name: go
+  image: jmervine/minigo
+  version: 1.8.4
+  source: jmervine/mini:latest
+  tags:
+  - 1.8
+  - 1
+  verify:
+    exec: go version
+
+- name: python
+  image: jmervine/minipy
+  version: 2.7.14
+  source: jmervine/mini:latest
+  tags:
+  - 2.7
+  - 2
+  priority: -1
+
+- name: python
+  image: jmervine/minipy
+  version: 3.6.1
+  source: jmervine/mini:latest
+  tags:
+  - latest
+  - 3.6
+  - 3
+
+- name: node
+  image: jmervine/mininode
+  version: 6.10.3
+  source: jmervine/minipy:2.7
+  tags:
+  - latest
+  - 6.10
+  - 6
+
+- name: ruby
+  image: jmervine/miniruby
+  version: 2.4.2
+  source: jmervine/mininode:latest
+  aliases:
+  - jmervine/minirb
+  tags:
+  - latest
+  - 2.4
+  - 2
