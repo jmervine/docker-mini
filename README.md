@@ -14,17 +14,28 @@ in this repo for examples of how to use it.
 
 ### Manifest
 
-> [MANIFEST.txt](MANIFEST.txt) contains a complete listing of images and tags,
-> including sizing.
+> [manifest.md](manifest.md) contains a complete listing of images and tags.
 
 * [jmervine/mini](https://registry.hub.docker.com/u/jmervine/mini)
 * [jmervine/minigo](https://registry.hub.docker.com/u/jmervine/minigo)
-* [jmervine/miniiojs](https://registry.hub.docker.com/u/jmervine/miniiojs)
 * [jmervine/mininode](https://registry.hub.docker.com/u/jmervine/mininode)
 * [jmervine/minipy](https://registry.hub.docker.com/u/jmervine/minipy)
 * [jmervine/miniruby](https://registry.hub.docker.com/u/jmervine/miniruby)
-* [jmervine/minirails](https://registry.hub.docker.com/u/jmervine/minirails)
 
+
+### Generator
+
+```
+go get github.com/jmervine/imagend
+```
+
+### Generate, Build, Verify, Push
+
+```
+make suite
+```
+
+See [github.com/jmervine/imagend](https://github.com/jmervine/imagend) for more options.
 
 [Alpine Linux]: https://www.alpinelinux.org/
 [Docker]: https://www.docker.com/
