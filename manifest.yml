@@ -18,14 +18,6 @@
     exec: "cat /etc/alpine-release"
     expect: 3.6.2
 
-# - name: go
-#   image: jmervine/minigo
-#   version: 1.9.2
-#   source: jmervine/mini:latest
-#   tags:
-#   - latest
-#   - 1.9
-#   - 1
 - name: go
   image: jmervine/minigo
   version: 1.8.4

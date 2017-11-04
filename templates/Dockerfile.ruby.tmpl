@@ -8,8 +8,8 @@ maintainer Joshua Mervine <jmervine@mervine.net>
 
 run set -x; \
   apk -U add \
-    ruby-dev \
-    ruby && \
+    ruby ruby-irb ruby-rake ruby-io-console ruby-bigdecimal ruby-json && \
+  echo 'gem: --no-document' > /etc/gemrc && \
   gem install bundler --no-ri && \
   rm -vrf /var/cache/apk/*
 

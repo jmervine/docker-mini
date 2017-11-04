@@ -9,7 +9,7 @@ maintainer Joshua Mervine <jmervine@mervine.net>
 run set -x; \
   apk update && \
   apk upgrade && \
-  apk add build-base && \
+  apk add build-base libstdc++ tzdata bash ca-certificates && \
   rm -rf /var/cache/apk/*
 
 cmd /bin/sh
